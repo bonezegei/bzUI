@@ -1,0 +1,56 @@
+{
+  "name": "@bonezegei/bzui",
+  "version": "1.0.0",
+  "description": "bzUI (Bonezegei UI): zero-dependency CSS design tokens, animations and the bzChart.js canvas chart engine for Bonezegei.js apps.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Bonezegei",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bonezegei/bzUI.git"
+  },
+  "homepage": "https://github.com/bonezegei/bzUI#readme",
+  "bugs": {
+    "url": "https://github.com/bonezegei/bzUI/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "ui",
+    "design-system",
+    "css",
+    "dark-mode",
+    "wcag",
+    "charts",
+    "canvas",
+    "bonezegei"
+  ],
+  "main": "./dist/bzChart.min.js",
+  "exports": {
+    ".": "./dist/bzChart.min.js",
+    "./chart": "./dist/bzChart.min.js",
+    "./css": "./dist/bzui.min.css",
+    "./css/animations": "./dist/bzui-animations.min.css",
+    "./css/components": "./dist/bzui-components.min.css",
+    "./css/utilities": "./dist/bzui-utilities.min.css",
+    "./css/extended": "./dist/bzui-extended.min.css",
+    "./css/icons": "./dist/bzui-icons.min.css",
+    "./bonezegei": "./dist/Bonezegei.min.js"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "esbuild src/js/bzChart.js --minify --format=esm --outfile=dist/bzChart.min.js && esbuild vendor/Bonezegei.js --minify --format=esm --outfile=dist/Bonezegei.min.js && esbuild src/css/bzui.css --minify --outfile=dist/bzui.min.css && esbuild src/css/bzui-animations.css --minify --outfile=dist/bzui-animations.min.css && esbuild src/css/bzui-components.css --minify --outfile=dist/bzui-components.min.css && esbuild src/css/bzui-utilities.css --minify --outfile=dist/bzui-utilities.min.css && esbuild src/css/bzui-extended.css --minify --outfile=dist/bzui-extended.min.css && esbuild src/css/bzui-icons.css --minify --outfile=dist/bzui-icons.min.css",
+    "check": "node --check src/js/bzChart.js && node --check vendor/Bonezegei.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
