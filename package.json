@@ -1,6 +1,6 @@
 {
   "name": "@bonezegei/bzui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "bzUI (Bonezegei UI): zero-dependency CSS design tokens, animations and the bzChart.js canvas chart engine for Bonezegei.js apps.",
   "type": "module",
   "license": "MIT",
@@ -27,12 +27,18 @@
     "bonezegei"
   ],
   "main": "./dist/bzChart.min.js",
+  "module": "./dist/bzChart.min.js",
   "exports": {
     ".": "./dist/bzChart.min.js",
     "./chart": "./dist/bzChart.min.js",
     "./css": "./dist/bzui.min.css",
     "./css/icons": "./dist/bzui-icons.min.css",
     "./css/icons/brands": "./dist/bzui-icons-brands.min.css",
+    "./js": "./dist/bzChart.min.js",
+    "./js/chart": "./dist/bzChart.min.js",
+    "./js/code": "./dist/bzui-code.min.js",
+    "./js/code/bsl": "./dist/bzui-code-bsl.min.js",
+    "./js/draw": "./dist/bzui-draw.min.js",
     "./bonezegei": "./dist/Bonezegei.min.js"
   },
   "files": [
@@ -41,7 +47,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "esbuild src/js/bzChart.js --minify --format=esm --outfile=dist/bzChart.min.js && esbuild vendor/Bonezegei.js --minify --format=esm --outfile=dist/Bonezegei.min.js && esbuild src/css/bzui.css --minify --outfile=dist/bzui.min.css && esbuild src/css/bzui-icons.css --minify --outfile=dist/bzui-icons.min.css && esbuild src/css/bzui-icons-brands.css --minify --outfile=dist/bzui-icons-brands.min.css",
+    "build": "esbuild src/js/bzChart.js --minify --format=esm --outfile=dist/bzChart.min.js && esbuild src/js/bzui-chart.js --minify --format=esm --outfile=dist/bzui-chart.min.js && esbuild src/js/bzui-code.js --minify --format=esm --outfile=dist/bzui-code.min.js && esbuild src/js/bzui-code-bsl.js --minify --format=esm --outfile=dist/bzui-code-bsl.min.js && esbuild src/js/bzui-draw.js --minify --format=esm --outfile=dist/bzui-draw.min.js && esbuild vendor/Bonezegei.js --minify --format=esm --outfile=dist/Bonezegei.min.js && esbuild src/css/bzui.css --minify --outfile=dist/bzui.min.css && esbuild src/css/bzui-code.css --minify --outfile=dist/bzui-code.min.css && esbuild src/css/bzui-draw.css --minify --outfile=dist/bzui-draw.min.css && esbuild src/css/bzui-icons.css --minify --outfile=dist/bzui-icons.min.css && esbuild src/css/bzui-icons-brands.css --minify --outfile=dist/bzui-icons-brands.min.css",
     "check": "node --check src/js/bzChart.js && node --check vendor/Bonezegei.js"
   },
   "engines": {
